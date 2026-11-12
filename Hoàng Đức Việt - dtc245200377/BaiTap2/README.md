@@ -126,14 +126,14 @@ Error Message: Thieu ma sinh vien hoac kho ma nguon.
 
 ## 5. Ảnh Minh Chứng Thực Tế
 
-> Đặt ảnh chụp màn hình chạy thực tế vào thư mục `Hoàng Đức Việt - dtc245200377/BaiTap2/images/` theo đúng tên tệp bên dưới:
+- **Dự án mẫu `CatalogApi` (cổng `5100`) chạy 2 tiến trình (`Catalog.Api` + `Catalog.Client`):**
+  ![Chay CatalogApi 2 tien trinh](images/01-catalog-run.png)
 
-- `images/01-server-running.png`: Ảnh terminal chạy `Submission.Api` trên cổng `5000`.
-  ![Server running](images/01-server-running.png)
-- `images/02-client-4-steps.png`: Ảnh terminal chạy `Submission.Client` hiển thị đủ 4 nấc.
-  ![Client 4 steps](images/02-client-4-steps.png)
-- `images/03-curl-or-http-tests.png`: Ảnh kết quả test các ca trong `requests.http` / `curl.exe -i`.
-  ![HTTP tests](images/03-curl-or-http-tests.png)
+- **Dự án thực hành `RestfulClientServer` / EduSubmit (cổng `5000`) chạy 2 tiến trình (`Submission.Api` + `Submission.Client` đủ 4 nấc):**
+  ![Chay EduSubmit 2 tien trinh](images/02-edusubmit-run.png)
+
+- **Kiểm thử các ca HTTP (`200`, `201`, `400`, `404`) trên `Submission.Api` cổng `5000`:**
+  ![Kiem thu requests.http](images/03-requests-http.png)
 
 ---
 
@@ -165,3 +165,4 @@ Error Message: Thieu ma sinh vien hoac kho ma nguon.
   - Client khai báo bản sao riêng các `record` cùng tên thuộc tính và kiểu tương thích.
   - ASP.NET Core Minimal API mặc định dùng `System.Text.Json` với cấu hình web (`JsonSerializerDefaults.Web`): serialize tên thuộc tính sang `camelCase` (`"studentCode"`, `"assignmentId"`, `"receivedAt"`...) và khi deserialize ở cả server lẫn `ReadFromJsonAsync<T>` ở client đều mặc định **không phân biệt hoa/thường (`PropertyNameCaseInsensitive = true`)**.
   - Nhờ giữ nguyên hợp đồng tên trường, kiểu dữ liệu (`int`, `Guid`, `string`, `bool`, `DateTimeOffset`) và cấu trúc JSON, client có thể thay đổi ngôn ngữ hoặc triển khai độc lập hoàn toàn với server mà vẫn giao tiếp chính xác.
+

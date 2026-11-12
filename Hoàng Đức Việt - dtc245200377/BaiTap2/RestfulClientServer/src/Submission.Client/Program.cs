@@ -1,4 +1,4 @@
-﻿using System.Net;
+using System.Net;
 using System.Net.Http.Json;
 
 var baseUrl = args.Length > 0 && !string.IsNullOrWhiteSpace(args[0])
